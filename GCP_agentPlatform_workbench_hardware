@@ -1,0 +1,117 @@
+{
+  "name": "projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace",
+  "gceSetup": {
+    "machineType": "https://www.googleapis.com/compute/v1/projects/finetuning-499807/zones/us-west1-c/machineTypes/g2-standard-8",
+    "acceleratorConfigs": [
+      {
+        "type": "NVIDIA_L4",
+        "coreCount": "1"
+      }
+    ],
+    "serviceAccounts": [
+      {
+        "email": "348842437138-compute@developer.gserviceaccount.com",
+        "scopes": [
+          "https://www.googleapis.com/auth/cloud-platform",
+          "https://www.googleapis.com/auth/userinfo.email"
+        ]
+      }
+    ],
+    "vmImage": {
+      "project": "cloud-notebooks-managed",
+      "family": "workbench-instances"
+    },
+    "bootDisk": {
+      "diskSizeGb": "150",
+      "diskType": "PD_BALANCED",
+      "diskEncryption": "GMEK"
+    },
+    "dataDisks": [
+      {
+        "diskSizeGb": "100",
+        "diskType": "PD_BALANCED",
+        "diskEncryption": "GMEK"
+      }
+    ],
+    "shieldedInstanceConfig": {
+      "enableVtpm": true,
+      "enableIntegrityMonitoring": true
+    },
+    "networkInterfaces": [
+      {
+        "network": "https://www.googleapis.com/compute/v1/projects/finetuning-499807/global/networks/default",
+        "subnet": "https://www.googleapis.com/compute/v1/projects/finetuning-499807/regions/us-west1/subnetworks/default",
+        "accessConfigs": [
+          {
+            "externalIp": ""
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "deeplearning-vm",
+      "notebook-instance"
+    ],
+    "metadata": {
+      "install-nvidia-driver": "true",
+      "enable-oslogin": "TRUE",
+      "disable-swap-binaries": "true",
+      "proxy-url": "6aef15ad06dfdc03-dot-us-west1.notebooks.googleusercontent.com",
+      "proxy-backend-id": "6aef15ad06dfdc03",
+      "proxy-user-mail": "cogitoergosum01001@gmail.com",
+      "idle-timeout-minutes": "300",
+      "enable-guest-attributes": "TRUE",
+      "shutdown-script": "/opt/deeplearning/bin/shutdown_script.sh",
+      "notebooks-api-version": "v2",
+      "proxy-mode": "mail",
+      "proxy-registration-url": "https://us-west1.notebooks.cloud.google.com/tun/m/4592f092208ecc84946b8f8f8016274df1b36a14",
+      "resource-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace",
+      "report-event-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace:reportInfoSystem",
+      "notebooks-api": "PROD",
+      "enable-jupyterlab4": "true",
+      "version": "143",
+      "new-proxy-agent-enabled": "true",
+      "serial-port-logging-enable": "true",
+      "instance-region": "us-west1"
+    },
+    "gpuDriverConfig": {
+      "enableGpuDriver": true
+    },
+    "reservationAffinity": {
+      "consumeReservationType": "RESERVATION_NONE"
+    },
+    "minCpuPlatform": "Unknown CPU Platform",
+    "instanceId": "3392582055821707418"
+  },
+  "proxyUri": "6aef15ad06dfdc03-dot-us-west1.notebooks.googleusercontent.com",
+  "creator": "cogitoergosum01001@gmail.com",
+  "state": "STOPPED",
+  "upgradeHistory": [
+    {
+      "snapshot": "projects/finetuning-499807/global/snapshots/rfbmolvryuiy",
+      "vmImage": "https://www.googleapis.com/compute/v1/projects/cloud-notebooks-managed/global/images/workbench-instances-v20260527",
+      "version": "142",
+      "state": "FAILED",
+      "createTime": "2026-07-01T09:13:44.727005862Z",
+      "action": "UPGRADE",
+      "targetVersion": "m143"
+    }
+  ],
+  "id": "bd37df14-816f-423b-9122-51fca8b7f11c",
+  "healthState": "HEALTHY",
+  "healthInfo": {
+    "last_updated": "2026-07-20T03:13:34+00:00",
+    "system_health": "1",
+    "docker_status": "1",
+    "jupyterlab_status": "1",
+    "jupyterlab_api_status": "1"
+  },
+  "createTime": "2026-06-18T09:12:19.571173847Z",
+  "updateTime": "2026-07-20T03:15:01.787849185Z",
+  "labels": {
+    "notebooks-product": "workbench-instances",
+    "resource-name": "gemma-workspace",
+    "consumer-project-id": "finetuning-499807",
+    "consumer-project-number": "348842437138"
+  }
+}
