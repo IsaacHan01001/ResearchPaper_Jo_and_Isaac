@@ -1,0 +1,28 @@
+(base) jupyter@gemma-workspace:~/finetuned_results/run1$ cd ../run1 && find . -maxdepth 1 -type f -printf '%T@ %TY-%Tm-%Td %TH:%TM:%TS %f\n' | sort -n | awk 'NR==1{first=$0; t1=$1} END{print first; print $0; printf "Elapsed: %.2f seconds (%.2f minutes)\n", $1-t1, ($1-t1)/60}'
+1789361246.0013230580 2026-09-14 04:47:26.0013230580 problem_0.txt
+1789381045.1337953480 2026-09-14 10:17:25.1337953480 problem_29.txt
+Elapsed: 19799.13 seconds (329.99 minutes)
+(base) jupyter@gemma-workspace:~/finetuned_results/run1$ cd ../run2 && find . -maxdepth 1 -type f -printf '%T@ %TY-%Tm-%Td %TH:%TM:%TS %f\n' 
+| sort -n | awk 'NR==1{first=$0; t1=$1} END{print first; print $0; printf "Elapsed: %.2f seconds (%.2f minutes)\n", $1-t1, ($1-t1)/60}'
+1789527288.4522497880 2026-09-16 02:54:48.4522497880 problem_1.txt
+1789546240.5464609570 2026-09-16 08:10:40.5464609570 problem_29.txt
+Elapsed: 18952.09 seconds (315.87 minutes)
+(base) jupyter@gemma-workspace:~/finetuned_results/run2$ cd ../run3 && find . -maxdepth 1 -type f -printf '%T@ %TY-%Tm-%Td %TH:%TM:%TS %f\n' 
+| sort -n | awk 'NR==1{first=$0; t1=$1} END{print first; print $0; printf "Elapsed: %.2f seconds (%.2f minutes)\n", $1-t1, ($1-t1)/60}'
+1789560744.7960157160 2026-09-16 12:12:24.7960157160 problem_0.txt
+1789578822.3200211020 2026-09-16 17:13:42.3200211020 problem_29.txt
+Elapsed: 18077.52 seconds (301.29 minutes)
+(base) jupyter@gemma-workspace:~/finetuned_results/run3$ cd ../run0 && find . -maxdepth 1 -type f -printf '%T@ %TY-%Tm-%Td %TH:%TM:%TS %f\n' 
+| sort -n | awk 'NR==1{first=$0; t1=$1} END{print first; print $0; printf "Elapsed: %.2f seconds (%.2f minutes)\n", $1-t1, ($1-t1)/60}'
+bash: cd: ../run0: No such file or directory
+(base) jupyter@gemma-workspace:~/finetuned_results/run3$ cd ../run4 && find . -maxdepth 1 -type f -printf '%T@ %TY-%Tm-%Td %TH:%TM:%TS %f\n' 
+| sort -n | awk 'NR==1{first=$0; t1=$1} END{print first; print $0; printf "Elapsed: %.2f seconds (%.2f minutes)\n", $1-t1, ($1-t1)/60}'
+1789579214.2610246960 2026-09-16 17:20:14.2610246960 problem_0.txt
+1789598809.3385920560 2026-09-16 22:46:49.3385920560 problem_29.txt
+Elapsed: 19595.08 seconds (326.58 minutes)
+(base) jupyter@gemma-workspace:~/finetuned_results/run4$ cd ../run5 && find . -maxdepth 1 -type f -printf '%T@ %TY-%Tm-%Td %TH:%TM:%TS %f\n' 
+| sort -n | awk 'NR==1{first=$0; t1=$1} END{print first; print $0; printf "Elapsed: %.2f seconds (%.2f minutes)\n", $1-t1, ($1-t1)/60}'
+1789599194.4508636300 2026-09-16 22:53:14.4508636300 problem_0.txt
+1789620454.8541314740 2026-09-17 04:47:34.8541314740 problem_29.txt
+Elapsed: 21260.40 seconds (354.34 minutes)
+(base) jupyter@gemma-workspace:~/finetuned_results/run5$ 
