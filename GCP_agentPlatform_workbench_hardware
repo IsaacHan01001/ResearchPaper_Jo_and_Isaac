@@ -1,7 +1,7 @@
 {
   "name": "projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace",
   "gceSetup": {
-    "machineType": "https://www.googleapis.com/compute/v1/projects/finetuning-499807/zones/us-west1-c/machineTypes/g2-standard-8",
+    "machineType": "g2-standard-8",
     "acceleratorConfigs": [
       {
         "type": "NVIDIA_L4",
@@ -19,16 +19,18 @@
     ],
     "vmImage": {
       "project": "cloud-notebooks-managed",
-      "family": "workbench-instances"
+      "family": "workbench-instances",
+      "imageDescription": "Debian 11, Python 3.10",
+      "imageId": "workbench-instances-v20260831"
     },
     "bootDisk": {
-      "diskSizeGb": "150",
+      "diskSizeGb": "200",
       "diskType": "PD_BALANCED",
       "diskEncryption": "GMEK"
     },
     "dataDisks": [
       {
-        "diskSizeGb": "100",
+        "diskSizeGb": "120",
         "diskType": "PD_BALANCED",
         "diskEncryption": "GMEK"
       }
@@ -43,9 +45,10 @@
         "subnet": "https://www.googleapis.com/compute/v1/projects/finetuning-499807/regions/us-west1/subnetworks/default",
         "accessConfigs": [
           {
-            "externalIp": ""
+            "externalIp": "34.187.170.49"
           }
-        ]
+        ],
+        "internalIp": "10.138.0.3"
       }
     ],
     "tags": [
@@ -53,26 +56,26 @@
       "notebook-instance"
     ],
     "metadata": {
-      "install-nvidia-driver": "true",
-      "enable-oslogin": "TRUE",
-      "disable-swap-binaries": "true",
-      "proxy-url": "6aef15ad06dfdc03-dot-us-west1.notebooks.googleusercontent.com",
-      "proxy-backend-id": "6aef15ad06dfdc03",
-      "proxy-user-mail": "cogitoergosum01001@gmail.com",
-      "idle-timeout-minutes": "300",
-      "enable-guest-attributes": "TRUE",
-      "shutdown-script": "/opt/deeplearning/bin/shutdown_script.sh",
-      "notebooks-api-version": "v2",
-      "proxy-mode": "mail",
+      "idle-timeout-minutes": "1440",
+      "instance-region": "us-west1",
       "proxy-registration-url": "https://us-west1.notebooks.cloud.google.com/tun/m/4592f092208ecc84946b8f8f8016274df1b36a14",
-      "resource-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace",
-      "report-event-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace:reportInfoSystem",
-      "notebooks-api": "PROD",
-      "enable-jupyterlab4": "true",
-      "version": "143",
-      "new-proxy-agent-enabled": "true",
+      "proxy-backend-id": "6aef15ad06dfdc03",
+      "notebooks-api-version": "v2",
       "serial-port-logging-enable": "true",
-      "instance-region": "us-west1"
+      "enable-oslogin": "TRUE",
+      "proxy-user-mail": "cogitoergosum01001@gmail.com",
+      "report-event-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace:reportInfoSystem",
+      "enable-jupyterlab4": "true",
+      "resource-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace",
+      "proxy-mode": "mail",
+      "shutdown-script": "/opt/deeplearning/bin/shutdown_script.sh",
+      "version": "148",
+      "enable-guest-attributes": "TRUE",
+      "disable-swap-binaries": "true",
+      "new-proxy-agent-enabled": "true",
+      "notebooks-api": "PROD",
+      "proxy-url": "6aef15ad06dfdc03-dot-us-west1.notebooks.googleusercontent.com",
+      "install-nvidia-driver": "true"
     },
     "gpuDriverConfig": {
       "enableGpuDriver": true
@@ -80,12 +83,29 @@
     "reservationAffinity": {
       "consumeReservationType": "RESERVATION_NONE"
     },
-    "minCpuPlatform": "Unknown CPU Platform",
-    "instanceId": "3392582055821707418"
+    "minCpuPlatform": "Intel Cascade Lake",
+    "instanceId": "3392582055821707418",
+    "systemMetadata": {
+      "enable-oslogin": "TRUE",
+      "proxy-user-mail": "cogitoergosum01001@gmail.com",
+      "version": "148",
+      "enable-guest-attributes": "TRUE",
+      "proxy-backend-id": "6aef15ad06dfdc03",
+      "notebooks-api-version": "v2",
+      "enable-jupyterlab4": "true",
+      "proxy-mode": "mail",
+      "shutdown-script": "/opt/deeplearning/bin/shutdown_script.sh",
+      "serial-port-logging-enable": "true",
+      "report-event-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace:reportInfoSystem",
+      "notebooks-api": "PROD",
+      "proxy-url": "6aef15ad06dfdc03-dot-us-west1.notebooks.googleusercontent.com",
+      "resource-url": "https://notebooks.googleapis.com/v2/projects/finetuning-499807/locations/us-west1-c/instances/gemma-workspace",
+      "install-nvidia-driver": "true"
+    }
   },
   "proxyUri": "6aef15ad06dfdc03-dot-us-west1.notebooks.googleusercontent.com",
   "creator": "cogitoergosum01001@gmail.com",
-  "state": "STOPPED",
+  "state": "ACTIVE",
   "upgradeHistory": [
     {
       "snapshot": "projects/finetuning-499807/global/snapshots/rfbmolvryuiy",
@@ -95,23 +115,50 @@
       "createTime": "2026-07-01T09:13:44.727005862Z",
       "action": "UPGRADE",
       "targetVersion": "m143"
+    },
+    {
+      "snapshot": "projects/finetuning-499807/global/snapshots/yymllhlkkiwp",
+      "vmImage": "https://www.googleapis.com/compute/v1/projects/cloud-notebooks-managed/global/images/workbench-instances-v20260622",
+      "version": "143",
+      "state": "SUCCEEDED",
+      "createTime": "2026-08-20T08:29:04.384654362Z",
+      "action": "UPGRADE",
+      "targetVersion": "m146"
+    },
+    {
+      "snapshot": "projects/finetuning-499807/global/snapshots/jsftmkechcsf",
+      "vmImage": "https://www.googleapis.com/compute/v1/projects/cloud-notebooks-managed/global/images/workbench-instances-v20260816",
+      "version": "146",
+      "state": "SUCCEEDED",
+      "createTime": "2026-08-26T05:06:15.586583186Z",
+      "action": "UPGRADE",
+      "targetVersion": "m147"
+    },
+    {
+      "snapshot": "projects/finetuning-499807/global/snapshots/vpcuddkoxojz",
+      "vmImage": "https://www.googleapis.com/compute/v1/projects/cloud-notebooks-managed/global/images/workbench-instances-v20260823",
+      "version": "147",
+      "state": "FAILED",
+      "createTime": "2026-09-07T01:24:12.152640657Z",
+      "action": "UPGRADE",
+      "targetVersion": "m149"
     }
   ],
   "id": "bd37df14-816f-423b-9122-51fca8b7f11c",
   "healthState": "HEALTHY",
   "healthInfo": {
-    "last_updated": "2026-07-20T03:13:34+00:00",
+    "jupyterlab_api_status": "1",
+    "last_updated": "2026-10-18T01:28:27+00:00",
     "system_health": "1",
     "docker_status": "1",
-    "jupyterlab_status": "1",
-    "jupyterlab_api_status": "1"
+    "jupyterlab_status": "1"
   },
   "createTime": "2026-06-18T09:12:19.571173847Z",
-  "updateTime": "2026-07-20T03:15:01.787849185Z",
+  "updateTime": "2026-10-18T01:28:28.316618897Z",
   "labels": {
-    "notebooks-product": "workbench-instances",
-    "resource-name": "gemma-workspace",
     "consumer-project-id": "finetuning-499807",
-    "consumer-project-number": "348842437138"
+    "consumer-project-number": "348842437138",
+    "notebooks-product": "workbench-instances",
+    "resource-name": "gemma-workspace"
   }
 }
